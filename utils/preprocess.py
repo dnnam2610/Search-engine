@@ -7,11 +7,10 @@ sys.path.append('../')
 
 
 def read_wiki(dir):
-    txt_files = glob.glob(os.path.join(dir, "*.txt"))  
+    txt_files = glob.glob('corpus.viwiki/viwiki/.*.txt') + glob.glob('corpus.viwiki/viwiki/*.txt')  
     if not txt_files:
         raise ValueError(f"No .txt files found in {dir}")
 
-    print(txt_files[0])
     dataset = load_dataset(
         path="text",
         data_files=txt_files,

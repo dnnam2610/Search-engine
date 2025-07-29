@@ -23,7 +23,7 @@ class TFIDF():
                 # tf_idf_list["miền"][i]
                 # tf_idf_list["trung"][i]
                 score += self.tf_idf_list.get(t, {}).get(i, 0) / self.ds[i]
-            results.append((score, i))
+            results.append((score, int(i)))
         results = sorted(results, key= lambda x: x[0], reverse=True)[:top_k]
         return results
     
